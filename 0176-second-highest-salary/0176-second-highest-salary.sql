@@ -1,0 +1,1 @@
+select if(count(salary)=0,null,salary) as SecondHighestSalary from (select salary,dense_rank() over (order by salary desc) as dnk from Employee) dnkemp where dnkemp.dnk=2;
